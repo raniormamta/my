@@ -35,3 +35,66 @@ public void characters(char []ch, int start, int length) throws SAXException
 	}
 }
 }
+
+
+import java.io.IOException;
+
+import javax.xml.parsers.SAXParserFactory;
+
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
+
+
+public class Driver {
+
+	
+	public static void main(String[] args) throws IOException,SAXException {
+		
+		XMLReader p = XMLReaderFactory.createXMLReader();
+		p.setContentHandler(new ShiftHandler());
+		p.parse("\\src\\ACS.xml");
+				
+		
+
+	}
+
+}
+
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ACES version="3.0">
+  <Header>
+    <Company>MAHLE Aftermarket Inc.</Company>
+    <SenderName>Amy Grimason</SenderName>
+    <SenderPhone>248-347-9726</SenderPhone>
+    <TransferDate>2014-12-11</TransferDate>
+    <BrandAAIAID>FLHQ</BrandAAIAID>
+    <DocumentTitle>MAHLE Original - Filters</DocumentTitle>
+    <EffectiveDate>2014-12-11</EffectiveDate>
+    <SubmissionType>FULL</SubmissionType>
+    <MapperCompany>MAHLE Aftermarket Inc. using Evokat by Illumaware</MapperCompany>
+    <MapperContact>Amy Grimason</MapperContact>
+    <MapperPhone>248-347-9726</MapperPhone>
+    <MapperEmail>amy.grimason@us.mahle.com</MapperEmail>
+    <VcdbVersionDate>2014-11-28</VcdbVersionDate>
+    <QdbVersionDate>2014-11-18</QdbVersionDate>
+    <PcdbVersionDate>2014-11-21</PcdbVersionDate>
+  </Header>
+   <App action="A" id="1" validate="yes">
+    <!-- Evo_ID = "4383411" --> 
+    <BaseVehicle id="18242"/>
+    <EngineBase id="588"/>
+    <EngineDesignation id="485"/>
+    <FuelDeliverySubType id="5"/>
+    <Note>Filter Type:  Air Filter (Primary)</Note>
+    <Qty>1</Qty>
+    <PartType id="6192"/>
+    <Position id="1"/>
+    <Part>LX 1689</Part>
+  </App>
+  <Footer>
+<RecordCount>50040</RecordCount>
+</Footer>
+</ACES>
